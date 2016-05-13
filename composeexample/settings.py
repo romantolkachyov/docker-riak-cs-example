@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'composeexample.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['/code/composeexample/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,3 +123,23 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+AWS_ACCESS_KEY_ID = '41T2W-IWLO5IRO-V_UJT'
+
+AWS_SECRET_ACCESS_KEY = 'OSzThI6rtai421TVDxS9_JqGadC6BisFxliqNw=='
+
+AWS_STORAGE_BUCKET_NAME = 'crmv2'
+
+# AWS_S3_PROXY_HOST = '192.168.99.100'
+# AWS_S3_PROXY_PORT = '8080'
+
+AWS_S3_HOST = 'storage'
+AWS_S3_PORT = 8080
+
+AWS_S3_USE_SSL = False
+
+AWS_S3_CALLING_FORMAT = 'boto.s3.connection.OrdinaryCallingFormat'
+
+# AWS_S3_CUSTOM_DOMAIN = 'storage'
